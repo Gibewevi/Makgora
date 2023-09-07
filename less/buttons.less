@@ -1,0 +1,45 @@
+.button {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    color: @gold;
+    cursor: pointer;
+    display: inline-block;
+    font-family: @font-logo;
+    font-size: @font-section-title;
+    font-weight: bold;
+    height: 36px;
+    outline: none;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    width: 220px;
+
+    &--primary {
+        background-image: url('../assets/images/primary-btn-default.jpg');
+        
+        &:hover {
+            background-image: url('../assets/images/primary-btn-hover.jpg');
+        }
+    }
+
+    &--secondary {
+        background-image: url('../assets/images/secondary-btn-default.jpg');
+        
+        &:hover {
+            background-image: url('../assets/images/secondary-btn-hover.jpg');
+        }
+    }
+
+    &--tertiary {
+        background-image: url('../assets/images/tertiary-btn-default.jpg');
+        height: 22px;
+        text-indent: -10000px;
+        width: 21px;
+    }
+
+    &--link {
+        line-height: 36px;
+    }
+}

@@ -1,0 +1,109 @@
+.makgoraTable {
+    
+    &__search {
+        align-items: center;
+        background: @coal;
+        display: flex;
+        height: 42px;
+        justify-content: end;
+        padding: 0 20px;
+
+        input {
+            margin: 0 8px 0 0 !important;
+            width: 230px;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        border-spacing: 1px;
+        text-align: left;
+    }
+
+    thead,
+    tbody {
+        tr {
+            th,
+            td {
+                overflow: hidden;
+                padding: 0 10px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                span {
+                    line-height: 0;
+                    vertical-align: middle;
+                }
+
+                .comment {
+                    color: @stone;
+                    font-style: italic;
+                }
+
+                .defeated {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+
+    thead {
+        height: 30px;
+        background: @dirt;
+    }
+
+    &__row {
+        height: 22px;
+
+        &:nth-child(odd) {
+            background: @coal;
+        }
+
+        &:nth-child(even) {
+            background: @rock;
+        }
+
+        &:hover {
+            background: @dirt;
+            color: @stone;
+        }
+    }
+
+    &__pagination {
+        background: url('../assets/images/pagination-bg.jpg') center center repeat-x;
+        display: flex;
+        flex-direction: column;
+        height: 25px;
+        justify-content: center;
+        padding: 0 10px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                font-weight: bold;
+                margin: 0;
+
+                a.active {
+                    color: @beige;
+                    text-decoration: none;
+                }
+
+                &::after {
+                    content: '.';
+                    margin: 0 3px;
+                }
+
+                &:first-child,
+                &:last-child {
+                    &::after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.formGroup {
+    &__label {
+        font-weight: bold;
+        margin: 0 8px 0 0;
+    }
+
+    &__select,
+    &__input {
+        background: @rock;
+        border: 1px solid @dirt;
+        color: @gold;
+        height: 22px;
+        margin: 0 8px 16px 0;
+        outline: none;
+        text-indent: 4px;
+
+        &:hover,
+        &:active {
+            border-color: @stone;
+        }
+
+        &:focus {
+            border-color: @gold;
+        }
+
+        &::placeholder {
+            color: @stone;
+            font-style: italic;
+        }
+
+        option:not(:first-of-type) {
+            color: @stone;
+        }
+
+        option[value=""][disabled] {
+            display: none;
+        }
+    }
+
+    .mandatory {
+        color: @blood;
+        margin: 0 0 0 2px;
+    }
+}

@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String   // Stockez ceci en tant que hash, jamais en clair!
+  fights    Fight[]
+}
+
+model Flag {
+  id        Int      @id @default(autoincrement())
+  flagURL   String
+  flagName  String
+  realms    Realm[]
+}
+
+model Realm {
+  id        Int      @id @default(autoincrement())
+  realmName String
+  flagID    Int
+  flag      Flag     @relation(fields: [flagID], references: [id])
+  fights    Fight[]
+}
+
+model Fight {
+  id                 Int     @id @default(autoincrement())
+  userID             Int
+  user               User    @relation(fields: [userID], references: [id])
+  date               String
+  locationLink       String
+  realmID            Int
+  realm              Realm   @relation(fields: [realmID], references: [id])
+  challengersFaction String
+  challengerName     String
+  challengerClass    String
+  opponentName       String
+  opponentClass      String
+  victory            String
+  rule               String
+  comment            String
+}

@@ -1,0 +1,36 @@
+.pageContent {
+    background-size: cover;
+    color: @coal;
+    
+    &__header {
+        height: 120px;
+        background: url('../assets/images/top-content-bg.jpg') top center no-repeat;
+    }
+
+    &__content {
+        background: url('../assets/images/content-bg.jpg') top center repeat-y;
+    }
+
+    &__footer {
+        height: 82px;
+        background: url('../assets/images/bottom-content-bg.jpg') top center no-repeat;
+    }
+
+    &__intro {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 30px;
+        text-align: center;
+        width: 526px;
+
+        h2 {
+            color: @wood;
+            font-family: @font-title;
+            font-size: @font-page-title;
+            letter-spacing: 2.5px;
+            margin: 30px 0;
+            text-shadow: 0px 0px 5px @priest;
+        }
+    }
+}
